@@ -44,6 +44,29 @@ const variantInlineTokenStyle: CssTokenOverrides = {
   '--ff-button-radius': '4px'
 };
 
+const repositoryLinks = [
+  {
+    label: 'Tokens + official brand packs',
+    href: 'https://github.com/bogarrenato/fuggetlenfe-tokens',
+    repo: 'fuggetlenfe-tokens'
+  },
+  {
+    label: 'Framework-independent Stencil core',
+    href: 'https://github.com/bogarrenato/fuggetlenfe-components',
+    repo: 'fuggetlenfe-components'
+  },
+  {
+    label: 'React wrapper + demo',
+    href: 'https://github.com/bogarrenato/fuggetlenfe-react-wrapper',
+    repo: 'fuggetlenfe-react-wrapper'
+  },
+  {
+    label: 'Angular wrapper + demo',
+    href: 'https://github.com/bogarrenato/fuggetlenfe-angular-wrapper',
+    repo: 'fuggetlenfe-angular-wrapper'
+  }
+] as const;
+
 function App() {
   const [activeTheme, setActiveTheme] = useState<ThemeMode>('light');
 
@@ -124,6 +147,36 @@ function App() {
             <span className="variant-label">Slotted icon text</span>
           </div>
         </div>
+      </section>
+
+      <section className="info-grid repo-grid">
+        <article className="info-card">
+          <p className="eyebrow">Repository map</p>
+          <div className="detail-block" aria-label="Repository map">
+            {repositoryLinks.map((repositoryLink) => (
+              <a
+                key={repositoryLink.repo}
+                className="repo-link"
+                href={repositoryLink.href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <strong>{repositoryLink.label}</strong>
+                <span>{repositoryLink.repo}</span>
+              </a>
+            ))}
+          </div>
+        </article>
+
+        <article className="info-card">
+          <p className="eyebrow">Best practices proved</p>
+          <div className="proof-list">
+            <div className="proof-item">Semantic-first token contract lives outside the wrapper and outside the component runtime.</div>
+            <div className="proof-item">The Stencil core stays logic-only and brand-neutral until external CSS is imported.</div>
+            <div className="proof-item">The React wrapper only bridges props and events. It does not own theming or business rules.</div>
+            <div className="proof-item">The demo imports published package names and documents the repo boundaries so the polyrepo shape stays visible.</div>
+          </div>
+        </article>
       </section>
 
       <section className="info-grid">
