@@ -518,6 +518,11 @@
             <strong>npm distribution</strong>
             <span>Install the published wrapper directly from npm and compose it with tokens and brand packs in any React app.</span>
           </a>
+          <a class="link-card" href="https://github.com/bogarrenato/fuggetlenfe-react-wrapper">
+            <p class="eyebrow">Repository</p>
+            <strong>Polyrepo source</strong>
+            <span>See the React wrapper repo, then jump from there to the tokens, components, and Angular sibling repositories.</span>
+          </a>
         </section>
 
         <section class="stats-grid" aria-label="Wrapper facts">
@@ -533,8 +538,8 @@
           </article>
           <article class="panel">
             <p class="eyebrow">Design model</p>
-            <span class="stat-value">External CSS only</span>
-            <p class="stat-copy">Brand and theme are activated from the app shell with imported CSS packs.</p>
+            <span class="stat-value">Semantic-first contract</span>
+            <p class="stat-copy">Brand and theme are activated from the app shell with imported CSS packs built on a semantic token contract.</p>
           </article>
         </section>
 
@@ -897,23 +902,23 @@ export function PillButtonExample() {
         <section id="token-architecture">
           <h2 class="section-heading">Token architecture</h2>
           <p class="section-copy">
-            The design system uses a three-layer token model that separates concerns between the
-            component contract, the brand implementation, and per-instance overrides. Understanding
-            this model is critical for theming and customization.
+            The design system uses a three-layer token model that separates semantic meaning,
+            brand implementation, and per-instance overrides. The React wrapper stays outside this
+            pipeline and only consumes the published contract.
           </p>
 
           <div class="layer-diagram">
             <div class="layer-box layer-1">
-              <h4>Layer 1: Contract</h4>
-              <p>Semantic token names declared in <code class="inline-code">contract.css</code>. Defines the API surface without providing values.</p>
+              <h4>Layer 1: Semantic contract</h4>
+              <p><code class="inline-code">contract.css</code> declares shared semantic colors, control tokens, and component aliases.</p>
             </div>
             <div class="layer-box layer-2">
               <h4>Layer 2: Brand pack</h4>
-              <p>Concrete values assigned to contract tokens for each brand + theme combination (e.g., <code class="inline-code">brand-2-light.css</code>).</p>
+              <p>Concrete brand + theme values fill the semantic and control tokens (for example <code class="inline-code">brand-2-light.css</code>).</p>
             </div>
             <div class="layer-box layer-3">
               <h4>Layer 3: Override</h4>
-              <p>Per-instance or per-section token overrides applied via inline <code class="inline-code">style</code> or scoped CSS rules.</p>
+              <p>Per-instance or per-section overrides are applied via inline <code class="inline-code">style</code> or scoped CSS rules only when needed.</p>
             </div>
           </div>
 
