@@ -149,6 +149,55 @@ function App() {
         </div>
       </section>
 
+      <section className="variants-section">
+        <p className="eyebrow">Icon slots</p>
+        <h2 className="section-title">icon-start &amp; icon-end</h2>
+        <div className="variants-grid">
+          <div className="variant-item">
+            <FfButton>
+              <svg slot="icon-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8l4 4 8-8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              Confirm
+            </FfButton>
+            <span className="variant-label">icon-start (check)</span>
+          </div>
+          <div className="variant-item">
+            <FfButton>
+              Download
+              <svg slot="icon-end" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v10M4 8l4 4 4-4M2 14h12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </FfButton>
+            <span className="variant-label">icon-end (download)</span>
+          </div>
+          <div className="variant-item">
+            <FfButton>
+              <svg slot="icon-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8l7 7 7-7M8 15V1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" transform="rotate(180 8 8)"/></svg>
+              Sync
+              <svg slot="icon-end" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8l7 7 7-7M8 15V1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </FfButton>
+            <span className="variant-label">Both slots</span>
+          </div>
+          <div className="variant-item">
+            <FfButton ffAriaLabel="Search">
+              <svg slot="icon-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" strokeWidth="2"/><path d="M10 10l4 4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+            </FfButton>
+            <span className="variant-label">Icon-only + aria-label</span>
+          </div>
+          <div className="variant-item">
+            <FfButton disabled>
+              <svg slot="icon-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8l4 4 8-8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              Disabled icon
+            </FfButton>
+            <span className="variant-label">Disabled + icon</span>
+          </div>
+          <div className="variant-item">
+            <FfButton fullWidth>
+              <svg slot="icon-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l7 7-7 7M15 8H1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              Full width with icon
+            </FfButton>
+            <span className="variant-label">Full-width + icon</span>
+          </div>
+        </div>
+      </section>
+
       <section className="info-grid repo-grid">
         <article className="info-card">
           <p className="eyebrow">Repository map</p>

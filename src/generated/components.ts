@@ -5,8 +5,6 @@
  * Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
  */
 
-/* eslint-disable */
-
 import { type FfButtonCustomEvent } from "@fuggetlenfe/components";
 import { FfButton as FfButtonElement, defineCustomElement as defineFfButton } from "@fuggetlenfe/components/components/ff-button.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
@@ -15,11 +13,12 @@ import React from 'react';
 
 type FfButtonEvents = { onFfClick: EventName<FfButtonCustomEvent<MouseEvent>> };
 
+const events: FfButtonEvents = { onFfClick: 'ffClick' as EventName<FfButtonCustomEvent<MouseEvent>> };
+
 export const FfButton: StencilReactComponent<FfButtonElement, FfButtonEvents> = /*@__PURE__*/ createComponent<FfButtonElement, FfButtonEvents>({
     tagName: 'ff-button',
     elementClass: FfButtonElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
-    react: React,
-    events: { onFfClick: 'ffClick' } as FfButtonEvents,
+    react: React as Parameters<typeof createComponent<FfButtonElement, FfButtonEvents>>[0]['react'],
+    events,
     defineCustomElement: defineFfButton
 });
